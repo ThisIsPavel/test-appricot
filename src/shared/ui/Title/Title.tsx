@@ -11,7 +11,7 @@ export default function Title({ variant, children, className, isError, ...props 
   const Tag = variant;
   return (
     <Tag
-      className={`${className} mb-8 text-6xl font-bold ${isError ? 'text-red-500 dark:text-red-500' : 'text-black dark:text-white'}`}
+      className={`${className} mb-8 text-3xl font-bold sm:text-6xl lg:text-7xl ${isError ? 'text-red-500 dark:text-red-500' : 'text-black dark:text-white'}`}
       {...props}
     >
       {children}
