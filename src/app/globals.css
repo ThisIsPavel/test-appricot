@@ -16,8 +16,11 @@
   --height-main: calc(100vh - var(--height-header));
 }
 
-body {
+html {
   box-sizing: border-box;
+}
+
+body {
   height: 100vh;
 }
 
