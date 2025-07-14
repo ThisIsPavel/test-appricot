@@ -1,0 +1,7 @@
+.textTruncate {
+  display: -webkit-box; /* Required for older versions of WebKit browsers */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical; /* Orient the box vertically */
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; /* Add the ellipsis (...) */
+}
