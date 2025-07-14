@@ -2,14 +2,14 @@ import { fetchProductById } from '@/entities/product/api/getProduct';
 import ProductDetail from '@/entities/product/ui/ProductDetail';
 import { notFound } from 'next/navigation';
 
-interface PageProps {
-  params: { slug: string };
+interface Props {
+  params: any; // Использован any, так как при явном указании типа PageProps ломалась build сборка для dynamic routes.
 }
 
-export default async function Product({ params }: PageProps) {
+export default async function Product({ params }: Props) {
   try {
-    const product = await fetchProductById(params.slug);
-    console.log(product, 'product');
+    const { slug } = await params;
+    const product = await fetchProductById(slug);
     return <ProductDetail product={product} />;
   } catch {
     notFound();
