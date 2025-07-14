@@ -1,10 +1,8 @@
-// ui/Pagination.tsx
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (pageNumber: number) => void;
 }
-
 export function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
   return (
     <div className="mt-4 flex justify-center">

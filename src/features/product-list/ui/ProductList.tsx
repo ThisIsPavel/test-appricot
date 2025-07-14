@@ -22,6 +22,10 @@ export default function ProductList() {
     );
   }
 
+  // Пагинация реализована на клиенте, т.к. API не предоставляет встроенную пагинацию (отсутствуют параметры offset/limit).
+  // Альтернативным решением было бы запросить изменения в API, но для целей данного задания
+  // реализована пагинация на клиенте.
+
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
   const paginatedProducts = products.slice(startIndex, endIndex);
@@ -63,6 +67,7 @@ export default function ProductList() {
               </div>
             ))}
           </div>
+
           <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
         </div>
       )}
