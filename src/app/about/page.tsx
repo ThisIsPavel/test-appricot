@@ -1,7 +1,12 @@
 import Title from '@/shared/ui/Title/Title';
+import { cache } from 'react';
 
-export default function About() {
-  const buildTime = new Date().toLocaleString();
+const getBuildTime = cache(() => {
+  return new Date().toLocaleString();
+});
+
+export default async function About() {
+  const buildTime = await getBuildTime();
   return (
     <main className="container mx-auto px-4 py-8 dark:text-white">
       <Title variant="h1">О нас</Title>
