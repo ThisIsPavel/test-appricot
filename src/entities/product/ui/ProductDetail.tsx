@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function ProductDetail({ product }: Props) {
-  const { description, images, price, title, id } = product;
+  const { description, images, price, title } = product;
   return (
     <div className="flex h-[500px] w-full flex-wrap gap-8 py-15 md:h-[500px] md:flex-nowrap">
       <Slider images={images} imageClass="h-full w-full" className="h-full md:w-1/2" />

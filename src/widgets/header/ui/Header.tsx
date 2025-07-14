@@ -21,12 +21,12 @@ export default function Header() {
     <header className={`${styles.header} dark:bg-primary bg-white shadow-sm transition`}>
       <nav className="container mx-auto h-full px-4 py-4" aria-label="Навигация">
         <div className="flex items-center justify-between">
-          <div className="flex space-x-8">
+          <div className="flex gap-3 space-x-8">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-lg font-medium transition-colors dark:text-black ${
+                className={`m-0 text-lg font-medium transition-colors dark:text-black ${
                   pathname === link.href
                     ? 'border-b-2 border-blue-600 text-blue-600 dark:border-black dark:text-black'
                     : 'hover:text-hover-text text-gray-600 dark:text-white dark:hover:text-black'
