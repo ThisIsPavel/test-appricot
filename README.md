@@ -3,24 +3,26 @@
 1. **Клонирование репозитория**
    ```bash
    git clone https://github.com/ThisIsPavel/test-appricot.git
-
    ```
 Установка зависимостей
-bash
+```bash
 npm install
-
+```
 
 Запуск в режиме разработки
 
-bash
+ ```bash
 npm run dev
+```
 Приложение будет доступно по адресу: http://localhost:3000
 
 Сборка для production
 
-bash
+```bash
 npm run build
+```
 Запуск production-версии
 
-bash
+```bash
 npm run start
+```
