@@ -43,33 +43,41 @@ export default function ProductList() {
           <Loader />
         </div>
       ) : (
-        <div>
-          <div className="mx-auto grid max-w-[1340px] grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5">
-            {paginatedProducts.map((product) => (
-              <div key={product.id} className="group dark:bg-primary w-full md:max-w-[250px] dark:text-white">
-                <div className="relative h-[200px] w-full">
-                  <Slider images={product.images} imageClass="h-[200px] w-full" />
-                </div>
-                <div className="my-5 px-4">
-                  <Link
-                    href={`/products/${product.slug}`}
-                    className="group-hover:text-hover-text block w-full text-center text-lg font-bold"
-                  >
-                    {product.title}
-                  </Link>
-                  <p className={`${styles.textTruncate} text-primary dark:text-desc cursor-pointer`}>
-                    {product.description}
-                  </p>
-                  <p className="font-bold">
-                    Цена: <span className="">{product.price}</span>
-                  </p>
-                </div>
+        <>
+          {paginatedProducts.length > 0 ? (
+            <div>
+              <div className="mx-auto grid max-w-[1340px] grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5">
+                {paginatedProducts.map((product) => (
+                  <div key={product.id} className="group dark:bg-primary w-full md:max-w-[250px] dark:text-white">
+                    <div className="relative h-[200px] w-full">
+                      <Slider images={product.images} imageClass="h-[200px] w-full" />
+                    </div>
+                    <div className="my-5 px-4">
+                      <Link
+                        href={`/products/${product.slug}`}
+                        className="group-hover:text-hover-text block w-full text-center text-lg font-bold"
+                      >
+                        {product.title}
+                      </Link>
+                      <p className={`${styles.textTruncate} text-primary dark:text-desc cursor-pointer`}>
+                        {product.description}
+                      </p>
+                      <p className="font-bold">
+                        Цена: <span className="">{product.price}</span>
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
-        </div>
+              <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+            </div>
+          ) : (
+            <Title variant="h3" className="mt-20 text-center">
+              Товаров нет
+            </Title>
+          )}
+        </>
       )}
     </>
   );
